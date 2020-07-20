@@ -14,3 +14,16 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->group(['prefix' => 'api/v1', 'middleware' => 'client'], function () use ($router){
+    $router->get('/', function () use ($router) {
+        return "ya tamos csm!}";
+    });
+
+    $router->post('/register','UsersController@register');
+
+    $router->group(['prefix' => 'users'], function ($router) {
+        //$router->get('/', );
+    });
+
+});
