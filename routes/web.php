@@ -17,7 +17,7 @@ $router->get('/', function () use ($router) {
 
 $router->group(['prefix' => 'api/v1', 'middleware' => 'client'], function () use ($router){
     $router->get('/', function () use ($router) {
-        return "ya tamos csm!}";
+        return "API 1.0";
     });
 
     $router->post('/register','UsersController@register');
@@ -26,8 +26,8 @@ $router->group(['prefix' => 'api/v1', 'middleware' => 'client'], function () use
         //$router->get('/', );
     });
 
-    $router->group([ 'prefix' => 'payment'], function ($router) {
-        $router->post('/', 'PaymentController@pay');
-    });
 
+});
+$router->group([ 'prefix' => 'payment'], function ($router) {
+    $router->post('/', 'PaymentController@checkout');
 });

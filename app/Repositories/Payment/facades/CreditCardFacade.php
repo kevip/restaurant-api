@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Repositories\Payment;
+namespace App\Repositories\Payment\Facades;
 
 
 use App\Interfaces\Payment\PayableInterface;
+use App\Repositories\Payment\Impl\CreditCardPayment;
 
 class CreditCardFacade implements PayableInterface
 {

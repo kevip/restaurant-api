@@ -3,6 +3,9 @@
 namespace App\Repositories\Payment;
 
 
+use App\Repositories\Payment\Facades\CreditCardFacade;
+use App\Repositories\Payment\Facades\PayPalFacade;
+
 
 class Payment
 {

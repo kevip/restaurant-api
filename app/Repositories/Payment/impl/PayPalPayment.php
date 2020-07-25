@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories\Payment;
+namespace App\Repositories\Payment\Impl;
 
 
 class PayPalPayment

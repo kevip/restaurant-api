@@ -15,7 +15,7 @@ class PaymentController extends Controller
      */
     public function checkout(Request $request) {
         $payment = new Payment();
-        $paymentType = $payment->initialize($request->get('type'));
+        $paymentType = $payment->initialize($request->get('paymentType'));
         return $paymentType->executePayment();
     }
 }
