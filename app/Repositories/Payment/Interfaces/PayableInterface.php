@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Interfaces\Payment;
+namespace App\Repositories\Payment\Interfaces;
 
 
 interface PayableInterface

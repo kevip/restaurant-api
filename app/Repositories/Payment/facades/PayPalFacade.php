@@ -3,8 +3,9 @@
 namespace App\Repositories\Payment\Facades;
 
 
-use App\Interfaces\Payment\PayableInterface;
 use App\Repositories\Payment\Impl\PayPalPayment;
+use App\Repositories\Payment\Interfaces\PayableInterface;
+
 
 class PayPalFacade implements PayableInterface
 {
