@@ -15,7 +15,7 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->group(['prefix' => 'api/v1', 'middleware' => 'client'], function () use ($router){
+$router->group(['prefix' => 'api/v1'/*, 'middleware' => 'client'*/], function () use ($router){
     $router->get('/', function () use ($router) {
         return "API 1.0";
     });
@@ -26,8 +26,12 @@ $router->group(['prefix' => 'api/v1', 'middleware' => 'client'], function () use
         //$router->get('/', );
     });
 
+    $router->group([ 'prefix' => 'payment'], function ($router) {
+        $router->post('/', 'PaymentController@checkout');
+    });
 
-});
-$router->group([ 'prefix' => 'payment'], function ($router) {
-    $router->post('/', 'PaymentController@checkout');
+    $router->group([ 'prefix' => 'order'], function ($router) {
+        $router->post('/new-order', 'PaymentController@checkout');
+    });
+
 });

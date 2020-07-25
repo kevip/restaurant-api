@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 use App\Repositories\Order\OrderRepository;
 use Illuminate\Http\Request;
 
-class OrderController
+class OrderController extends Controller
 {
     /**
      * @param Request $request

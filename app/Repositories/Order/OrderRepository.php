@@ -10,6 +10,8 @@ class OrderRepository
 {
     public function registerOrder(Request $request)
     {
+        //@TODO: store order data in database
+
         $address = new AddressBuilder($request->get("shippingAddress"));
         $address->withCalle($request->get("calle"))
                 ->withDistrito($request->get("distrito"))
@@ -17,7 +19,7 @@ class OrderRepository
                 ->withDepartamento($request->get("departamento"))
                 ->build();
 
-        $this->execPayment($request);
+        return $this->execPayment($request);
 
     }
 
