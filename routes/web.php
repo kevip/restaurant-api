@@ -26,4 +26,8 @@ $router->group(['prefix' => 'api/v1', 'middleware' => 'client'], function () use
         //$router->get('/', );
     });
 
+    $router->group([ 'prefix' => 'payment'], function ($router) {
+        $router->post('/', 'PaymentController@pay');
+    });
+
 });
