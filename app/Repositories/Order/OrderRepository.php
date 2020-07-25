@@ -12,13 +12,16 @@ class OrderRepository
     {
         //@TODO: store order data in database
 
-        $address = new AddressBuilder($request->get("shippingAddress"));
-        $address->withCalle($request->get("calle"))
-                ->withDistrito($request->get("distrito"))
-                ->withProvincia($request->get("provincia"))
-                ->withDepartamento($request->get("departamento"))
+        $customerAddress = $request->get("customerAddress");
+        $orderItemList = $request->get("items");
+        $address = new AddressBuilder($customerAddress["shippingAddress"]);
+        $address = $address->withCalle($customerAddress["calle"])
+                ->withDistrito($customerAddress["distrito"])
+                ->withProvincia($customerAddress["provincia"])
+                ->withDepartamento($customerAddress["departamento"])
                 ->build();
 
+        $shippingAddress = $address->getShippingAddress();
         return $this->execPayment($request);
 
     }

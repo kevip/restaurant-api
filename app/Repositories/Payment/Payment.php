@@ -21,8 +21,10 @@ class Payment
                 return new PayPalFacade();
             case 'credit':
                 return new CreditCardFacade();
+            case 'cash':
+                throw new \Exception("Available soon!");
             default:
-                throw new \Exception("Method not supported");
+                throw new \Exception("Payment method not supported!");
         }
     }
 

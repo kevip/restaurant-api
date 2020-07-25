@@ -11,6 +11,11 @@ class Address
     protected $departamento;
     protected $shippingAddress;
 
+    public function getShippingAddress(): string
+    {
+        return $this->shippingAddress;
+    }
+
     public function setShippingAddress(string $shippingAddress)
     {
         $this->shippingAddress = $shippingAddress;

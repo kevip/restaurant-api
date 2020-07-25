@@ -24,7 +24,7 @@ class MenuItem implements IMenuItem
 
     public function available(): bool
     {
-        // TODO: Implement available() method.
+        return $this->item->getAvailability();
     }
 
 

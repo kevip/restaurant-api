@@ -26,12 +26,12 @@ $router->group(['prefix' => 'api/v1'/*, 'middleware' => 'client'*/], function ()
         //$router->get('/', );
     });
 
-    $router->group([ 'prefix' => 'payment'], function ($router) {
-        $router->post('/', 'PaymentController@checkout');
-    });
+//    $router->group([ 'prefix' => 'payment'], function ($router) {
+//        $router->post('/', 'PaymentController@checkout');
+//    });
 
     $router->group([ 'prefix' => 'order'], function ($router) {
-        $router->post('/new-order', 'PaymentController@checkout');
+        $router->post('/new-order', 'OrderController@registerOrder');
     });
 
 });
